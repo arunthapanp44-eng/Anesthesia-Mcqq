@@ -1,0 +1,1964 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anesthesia Assistant MCQ Practice</title>
+<meta name="description" content="Practice MCQs for the Gandaki Pradesh Lok Sewa Aayog Anesthesia Assistant (5th level) written exam. Mock tests with negative marking and practice by syllabus unit.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Instrument+Serif&family=Noto+Sans+Devanagari:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #EDF1EE;
+  --surface: #FFFFFF;
+  --surface-2: #DFE7E3;
+  --ink: #14201D;
+  --ink-2: #4A5A55;
+  --line: #C3CFCA;
+  --primary: #1D4F9F;
+  --primary-ink: #FFFFFF;
+  --ball-edge: #0F2E63;
+  --sel-bg: #E4ECFA;
+  --good: #17714A;
+  --good-bg: #DDF0E5;
+  --bad: #AE2F2A;
+  --bad-bg: #F7E0DD;
+  --serif: 'Instrument Serif', 'Iowan Old Style', Georgia, 'Times New Roman', serif;
+  --sans: 'Atkinson Hyperlegible', 'Segoe UI', system-ui, -apple-system, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --deva: 'Noto Sans Devanagari', 'Mukta', 'Nirmala UI', 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1513;
+    --surface: #151F1C;
+    --surface-2: #1E2B27;
+    --ink: #E4EEEA;
+    --ink-2: #9DB0AA;
+    --line: #2D3C37;
+    --primary: #7EA6F2;
+    --primary-ink: #0B1220;
+    --ball-edge: #3E67B8;
+    --sel-bg: #1A2740;
+    --good: #5FD39A;
+    --good-bg: #123123;
+    --bad: #F09A93;
+    --bad-bg: #3A1917;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1513;
+  --surface: #151F1C;
+  --surface-2: #1E2B27;
+  --ink: #E4EEEA;
+  --ink-2: #9DB0AA;
+  --line: #2D3C37;
+  --primary: #7EA6F2;
+  --primary-ink: #0B1220;
+  --ball-edge: #3E67B8;
+  --sel-bg: #1A2740;
+  --good: #5FD39A;
+  --good-bg: #123123;
+  --bad: #F09A93;
+  --bad-bg: #3A1917;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); -webkit-text-size-adjust: 100%; }
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 1.0625rem/1.55 var(--sans);
+}
+button { font: inherit; color: inherit; }
+h1, h2, h3, p { margin: 0; }
+.wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+
+/* Buttons */
+.btn {
+  font: 700 1rem/1.2 var(--sans);
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: 2px solid var(--ink);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+.btn.primary { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.ghost {
+  min-height: 44px; padding: 8px 10px;
+  border: 0; background: none; cursor: pointer;
+  font-weight: 700; color: var(--ink-2); border-radius: 8px;
+}
+.linkbtn { border: 0; background: none; padding: 6px 0; cursor: pointer; text-decoration: underline; color: var(--ink-2); }
+.btn:focus-visible, .ghost:focus-visible, .linkbtn:focus-visible, .opt:focus-visible,
+.unit:focus-visible, .cell:focus-visible, .tab:focus-visible, .why:focus-visible {
+  outline: 3px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Flowmeter progress tube */
+.tube {
+  --ball: 26px; --p: 0;
+  position: relative; flex: 1; min-width: 0;
+  height: 32px; border-radius: 999px;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.tube.sm { --ball: 16px; height: 22px; }
+.tube::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 10%);
+}
+.ball {
+  position: absolute; top: 50%;
+  width: var(--ball); height: var(--ball);
+  margin-top: calc(var(--ball) / -2);
+  left: calc(3px + (100% - var(--ball) - 6px) * var(--p));
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 30%, rgba(255,255,255,.9) 0 9%, var(--primary) 42%, var(--ball-edge) 100%);
+  box-shadow: 0 1px 2px rgba(0,0,0,.35);
+  transition: left .6s cubic-bezier(.3,.7,.2,1);
+}
+
+/* Home */
+.hero { padding: 44px 0 28px; }
+h1 {
+  font: 400 clamp(2.7rem, 10vw, 4.6rem)/.98 var(--serif);
+  letter-spacing: -.01em;
+  margin-bottom: 10px;
+}
+.ne { font-family: var(--deva); font-weight: 500; color: var(--ink-2); font-size: 1.05rem; margin-bottom: 18px; }
+.lede { max-width: 54ch; color: var(--ink-2); }
+.gauge { margin: 26px 0 8px; }
+.gauge .tube { display: block; height: 38px; --ball: 30px; }
+.gauge-note { margin-top: 10px; font-size: .95rem; color: var(--ink-2); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+h2.sec { font: 400 1.9rem/1.1 var(--serif); margin: 34px 0 6px; }
+.sub { color: var(--ink-2); font-size: .95rem; margin-bottom: 12px; }
+.units { border-top: 1px solid var(--line); }
+.unit {
+  display: grid; grid-template-columns: 2.4rem 1fr; column-gap: 10px; row-gap: 2px;
+  width: 100%; text-align: left; align-items: baseline;
+  padding: 14px 6px; background: none; border: 0; border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+.unit:hover { background: var(--surface); }
+.un { font: 400 1.7rem/1 var(--serif); color: var(--ink-2); grid-row: 1 / span 2; }
+.uname { font-weight: 700; line-height: 1.3; }
+.ustat { display: flex; align-items: center; gap: 8px; font-size: .88rem; color: var(--ink-2); }
+.pips { display: inline-flex; gap: 3px; }
+.pip { width: 8px; height: 14px; border-radius: 2px; background: var(--surface-2); border: 1px solid var(--line); }
+.pip.g { background: var(--good); border-color: var(--good); }
+.pip.b { background: var(--bad); border-color: var(--bad); }
+.mocks { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.mocks li { display: flex; justify-content: space-between; gap: 12px; padding: 10px 6px; border-bottom: 1px solid var(--line); font-variant-numeric: tabular-nums; }
+.foot { margin: 40px 0 48px; color: var(--ink-2); font-size: .9rem; max-width: 60ch; }
+
+/* Quiz */
+.shell { min-height: calc(100vh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); display: flex; flex-direction: column; }
+@supports (height: 100dvh) {
+  .shell { min-height: calc(100dvh - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)); }
+}
+.shell > main { flex: 1; }
+.bar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--line); padding: 8px 0;
+}
+.row { display: flex; align-items: center; gap: 10px; }
+.count { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.clock { font-variant-numeric: tabular-nums; color: var(--ink-2); min-width: 3.2rem; text-align: right; }
+.qmeta { color: var(--ink-2); font-size: .95rem; margin: 22px 0 8px; }
+h1.qtext { font: 700 1.3rem/1.4 var(--sans); letter-spacing: 0; margin: 0; max-width: 62ch; }
+.opts { display: grid; gap: 10px; margin: 22px 0 14px; }
+.opt {
+  display: grid; grid-template-columns: 2.1rem 1fr; gap: 12px; align-items: start;
+  width: 100%; text-align: left; min-height: 58px; padding: 13px 14px;
+  border-radius: 12px; border: 2px solid var(--line); background: var(--surface); cursor: pointer;
+}
+.ltr {
+  width: 2.1rem; height: 2.1rem; border-radius: 50%;
+  border: 2px solid var(--ink-2); display: grid; place-items: center; font-weight: 700;
+}
+.opt[aria-pressed="true"] { border-color: var(--primary); background: var(--sel-bg); }
+.opt[aria-pressed="true"] .ltr { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
+.opt.right { border-color: var(--good); background: var(--good-bg); }
+.opt.right .ltr { background: var(--good); border-color: var(--good); color: var(--bg); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-bg); }
+.opt.wrong .ltr { background: var(--bad); border-color: var(--bad); color: var(--bg); }
+.opt[aria-disabled="true"] { cursor: default; }
+.tag { display: block; font-size: .85rem; font-weight: 700; margin-top: 3px; }
+.right .tag { color: var(--good); }
+.wrong .tag { color: var(--bad); }
+.hint { color: var(--ink-2); font-size: .9rem; margin-bottom: 16px; }
+.why {
+  border-left: 5px solid var(--primary); background: var(--surface);
+  padding: 14px 16px; border-radius: 0 12px 12px 0; margin: 4px 0 24px;
+}
+.why.ok { border-left-color: var(--good); }
+.why.no { border-left-color: var(--bad); }
+.verdict { font-weight: 700; margin-bottom: 4px; }
+.nav {
+  position: sticky; bottom: 0; z-index: 4;
+  background: var(--bg); border-top: 1px solid var(--line);
+  padding: 12px 0 calc(12px + env(safe-area-inset-bottom, 0px));
+}
+.nav .wrap { display: flex; gap: 10px; justify-content: space-between; align-items: center; }
+.nav .btn { flex: 0 0 auto; }
+.nav .mid { flex: 1; }
+.nav .end { margin-left: auto; }
+
+/* Dialog */
+.scrim {
+  position: fixed; inset: 0; z-index: 20;
+  background: rgba(8, 14, 12, .58);
+  display: grid; place-items: end center;
+}
+.dialog {
+  background: var(--surface); width: min(560px, 100%); max-height: 88%; overflow: auto;
+  border-radius: 18px 18px 0 0; padding: 22px 20px calc(22px + env(safe-area-inset-bottom, 0px));
+}
+.dialog h2 { font: 400 1.7rem/1.15 var(--serif); margin-bottom: 6px; }
+.dialog p.muted { color: var(--ink-2); margin-bottom: 16px; }
+.dlg-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; justify-content: flex-end; }
+@media (min-width: 640px) {
+  .scrim { place-items: center; padding: 20px; }
+  .dialog { border-radius: 18px; }
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 8px; }
+.cell {
+  min-height: 46px; border-radius: 8px; border: 2px solid var(--line);
+  background: var(--bg); font-weight: 700; cursor: pointer; font-variant-numeric: tabular-nums;
+}
+.cell.done { background: var(--primary); border-color: var(--primary); color: var(--primary-ink); }
+.cell.cur { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+/* Result */
+.res { padding: 36px 0 24px; }
+.res h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); margin-bottom: 4px; }
+.score { font: 400 clamp(4.4rem, 22vw, 7.5rem)/1 var(--serif); font-variant-numeric: tabular-nums; }
+.of { font-size: 1.15rem; color: var(--ink-2); margin-left: 6px; }
+.math { color: var(--ink-2); margin-top: 6px; max-width: 58ch; }
+.split { display: flex; height: 16px; border-radius: 8px; overflow: hidden; margin: 20px 0 10px; background: var(--surface-2); }
+.split span { display: block; }
+.s-c { background: var(--good); }
+.s-w { background: var(--bad); }
+.s-s { background: var(--ink-2); opacity: .55; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 22px; font-weight: 700; }
+.legend span::before { content: ''; display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: -1px; background: var(--ink-2); }
+.legend .lc::before { background: var(--good); }
+.legend .lw::before { background: var(--bad); }
+.legend .ls::before { opacity: .55; }
+.tblbox { overflow-x: auto; max-width: 100%; }
+.tbl { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.tbl th, .tbl td { text-align: right; padding: 9px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.tbl th:first-child, .tbl td:first-child { text-align: left; white-space: normal; min-width: 12rem; }
+.tbl th { font-weight: 700; color: var(--ink-2); font-size: .9rem; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 8px; }
+.tab { min-height: 42px; padding: 8px 16px; border-radius: 999px; border: 2px solid var(--line); background: none; cursor: pointer; font-weight: 700; }
+.tab[aria-pressed="true"] { border-color: var(--primary); background: var(--primary); color: var(--primary-ink); }
+.rev { border-left: 5px solid var(--line); padding: 4px 0 4px 16px; margin: 22px 0; }
+.rev.correct { border-left-color: var(--good); }
+.rev.wrong { border-left-color: var(--bad); }
+.rev.skipped { border-left-color: var(--ink-2); }
+.rev-h { color: var(--ink-2); font-size: .9rem; margin-bottom: 4px; }
+.rev h3 { font: 700 1.1rem/1.4 var(--sans); margin-bottom: 8px; }
+.rev .ans { margin-bottom: 4px; }
+.rev .key { font-weight: 700; }
+.rev .expl { margin-top: 8px; color: var(--ink-2); }
+.empty { color: var(--ink-2); padding: 16px 0; }
+.end-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 30px 0 48px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ball { transition: none; }
+}
+@media (max-width: 420px) {
+  .nav .btn { padding: 12px 14px; }
+  h1.qtext { font-size: 1.2rem; }
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<noscript><p style="padding:24px">This practice site needs JavaScript to run.</p></noscript>
+<script type="application/json" id="qdata">{
+  "metadata": {
+    "exam": "Gandaki Province Public Service Commission - Assistant 5th Level, Anesthesia Assistant (Nepal Health Service, Miscellaneous Group)",
+    "scheme": "50 MCQs, 100 marks (2 marks each), 20% negative marking",
+    "total_questions": 85,
+    "units": 17,
+    "questions_per_unit": 5,
+    "language": "English",
+    "fields": ["id", "unit_number", "unit_name", "question", "options (A-D)", "correct_answer", "explanation"]
+  },
+  "questions": [
+    {
+      "id": "U01Q1",
+      "unit_number": 1,
+      "unit_name": "Basics of Anesthesia",
+      "question": "Which of the following is NOT a component of the classical 'triad' of general anaesthesia?",
+      "options": {
+        "A": "Hypnosis (unconsciousness)",
+        "B": "Analgesia",
+        "C": "Muscle relaxation",
+        "D": "Hypothermia"
+      },
+      "correct_answer": "D",
+      "explanation": "The classical triad of general anaesthesia is hypnosis (unconsciousness), analgesia and muscle relaxation (some authors add amnesia and autonomic stability). Hypothermia is not a goal of anaesthesia; it is an unwanted side effect that must be prevented by warming measures."
+    },
+    {
+      "id": "U01Q2",
+      "unit_number": 1,
+      "unit_name": "Basics of Anesthesia",
+      "question": "The first successful public demonstration of ether anaesthesia in 1846 at Massachusetts General Hospital was given by:",
+      "options": {
+        "A": "Horace Wells",
+        "B": "William T. G. Morton",
+        "C": "James Y. Simpson",
+        "D": "John Snow"
+      },
+      "correct_answer": "B",
+      "explanation": "William T. G. Morton demonstrated ether anaesthesia on 16 October 1846 ('Ether Day'). Horace Wells pioneered nitrous oxide, James Simpson introduced chloroform (1847), and John Snow is regarded as the first full-time physician anaesthetist and a pioneer of anaesthetic safety."
+    },
+    {
+      "id": "U01Q3",
+      "unit_number": 1,
+      "unit_name": "Basics of Anesthesia",
+      "question": "Which of the following is NOT a form of regional anaesthesia?",
+      "options": {
+        "A": "Spinal anaesthesia",
+        "B": "Epidural anaesthesia",
+        "C": "Total intravenous anaesthesia (TIVA)",
+        "D": "Brachial plexus block"
+      },
+      "correct_answer": "C",
+      "explanation": "TIVA is a technique of general anaesthesia in which all agents (e.g., propofol and an opioid) are given intravenously. Spinal, epidural and peripheral nerve blocks such as brachial plexus block produce loss of sensation in a region of the body while the patient may remain conscious."
+    },
+    {
+      "id": "U01Q4",
+      "unit_number": 1,
+      "unit_name": "Basics of Anesthesia",
+      "question": "According to Guedel's classification, the stage of anaesthesia characterised by loss of consciousness, irregular breathing, struggling, and increased risk of laryngospasm and vomiting is:",
+      "options": {
+        "A": "Stage I (analgesia)",
+        "B": "Stage II (excitement/delirium)",
+        "C": "Stage III (surgical anaesthesia)",
+        "D": "Stage IV (medullary paralysis)"
+      },
+      "correct_answer": "B",
+      "explanation": "Stage II begins with loss of consciousness and ends with the onset of regular breathing. Reflexes are exaggerated, so airway instrumentation or stimulation may trigger laryngospasm, vomiting or arrhythmias. Stage III is the desired surgical plane; Stage IV is overdose with respiratory and circulatory collapse."
+    },
+    {
+      "id": "U01Q5",
+      "unit_number": 1,
+      "unit_name": "Basics of Anesthesia",
+      "question": "The technique in which a combination of drugs (e.g., opioid, hypnotic, inhalational agent and muscle relaxant) is used, each in small doses, to achieve the components of anaesthesia is called:",
+      "options": {
+        "A": "Balanced anaesthesia",
+        "B": "Total intravenous anaesthesia",
+        "C": "Monitored anaesthesia care",
+        "D": "Standby anaesthesia"
+      },
+      "correct_answer": "A",
+      "explanation": "Balanced anaesthesia uses several drugs, each contributing a different component (hypnosis, analgesia, relaxation), which lowers the dose and side effects of each drug. TIVA uses only intravenous agents; MAC is sedation/analgesia with monitoring; standby means an anaesthetist is present without giving any anaesthetic."
+    },
+    {
+      "id": "U02Q1",
+      "unit_number": 2,
+      "unit_name": "Anaesthesia Machines",
+      "question": "The Pin Index Safety System (PISS) is designed to prevent:",
+      "options": {
+        "A": "Filling of a vaporizer with the wrong agent",
+        "B": "Attachment of a gas cylinder to the wrong yoke on the anaesthesia machine",
+        "C": "Delivery of a hypoxic gas mixture",
+        "D": "Disconnection of the breathing circuit"
+      },
+      "correct_answer": "B",
+      "explanation": "PISS uses pins on the yoke that fit holes on the cylinder valve, so only the correct gas cylinder (e.g., O2: positions 2 and 5; N2O: 3 and 5) can be mounted. Wrong-agent filling is prevented by keyed fillers, hypoxic mixtures by the oxygen ratio controller, and circuit disconnection by alarms."
+    },
+    {
+      "id": "U02Q2",
+      "unit_number": 2,
+      "unit_name": "Anaesthesia Machines",
+      "question": "The device that shuts off or reduces the flow of nitrous oxide (and other gases) when the oxygen supply pressure falls is the:",
+      "options": {
+        "A": "Fail-safe valve",
+        "B": "APL (adjustable pressure-limiting) valve",
+        "C": "Pressure-relief (pop-off) valve",
+        "D": "Non-return (check) valve"
+      },
+      "correct_answer": "A",
+      "explanation": "The fail-safe valve (oxygen failure protection device) is triggered when oxygen pressure drops below a threshold (about 20-30 psi depending on the machine) and interrupts N2O flow so that a hypoxic mixture is not delivered. The APL valve controls circuit pressure, the pressure-relief valve protects the machine from over-pressure, and a check valve prevents backflow."
+    },
+    {
+      "id": "U02Q3",
+      "unit_number": 2,
+      "unit_name": "Anaesthesia Machines",
+      "question": "Desflurane requires an electrically heated and pressurised vaporizer (e.g., Tec 6) mainly because:",
+      "options": {
+        "A": "It is highly soluble in blood",
+        "B": "It has a very low MAC",
+        "C": "Its boiling point (about 23 degrees C) is close to room temperature",
+        "D": "It is broken down by soda lime"
+      },
+      "correct_answer": "C",
+      "explanation": "Desflurane boils at about 22.8-23.5 degrees C, so at operating-theatre temperature it would vaporise unpredictably. The Tec 6 heats it to about 39 degrees C and pressurises it (about 2 atm) for reliable output. Desflurane has low solubility and a high MAC (about 6%), and it is not primarily degraded by soda lime except that dry absorbent can generate carbon monoxide."
+    },
+    {
+      "id": "U02Q4",
+      "unit_number": 2,
+      "unit_name": "Anaesthesia Machines",
+      "question": "Which Mapleson breathing system is the most efficient for spontaneous ventilation?",
+      "options": {
+        "A": "Mapleson D",
+        "B": "Mapleson C",
+        "C": "Mapleson E",
+        "D": "Mapleson A (Magill)"
+      },
+      "correct_answer": "D",
+      "explanation": "The Mapleson A (Magill) circuit is the most efficient for spontaneous breathing (fresh gas flow about equal to minute ventilation) but the least efficient for controlled ventilation. Mapleson D (Bain) and Mapleson F (Jackson-Rees) are more efficient for controlled ventilation, and Mapleson F is commonly used in paediatric anaesthesia."
+    },
+    {
+      "id": "U02Q5",
+      "unit_number": 2,
+      "unit_name": "Anaesthesia Machines",
+      "question": "The Bain circuit is a coaxial modification of which Mapleson system?",
+      "options": {
+        "A": "Mapleson A",
+        "B": "Mapleson D",
+        "C": "Mapleson E",
+        "D": "Mapleson F"
+      },
+      "correct_answer": "B",
+      "explanation": "The Bain circuit is a coaxial version of Mapleson D: fresh gas flows through an inner tube and exhaled gas returns through the outer corrugated tube, warming the fresh gas. Its main hazard is an unnoticed disconnection or kinking of the inner tube, which causes rebreathing."
+    },
+    {
+      "id": "U03Q1",
+      "unit_number": 3,
+      "unit_name": "Gas Supply",
+      "question": "The approximate pressure in a full oxygen cylinder is:",
+      "options": {
+        "A": "500 psi",
+        "B": "750 psi",
+        "C": "1,000 psi",
+        "D": "2,000 psi (about 137 bar)"
+      },
+      "correct_answer": "D",
+      "explanation": "Oxygen is stored as a compressed gas at about 2,000 psi (about 137 bar) in a full cylinder. Because oxygen stays gaseous at room temperature, pressure falls in proportion to the contents (Boyle's law), so the gauge reading shows how much oxygen remains. 750 psi is closer to the N2O cylinder pressure."
+    },
+    {
+      "id": "U03Q2",
+      "unit_number": 3,
+      "unit_name": "Gas Supply",
+      "question": "The amount of nitrous oxide remaining in a cylinder is best estimated by:",
+      "options": {
+        "A": "The pressure gauge reading",
+        "B": "Weighing the cylinder",
+        "C": "The flowmeter reading",
+        "D": "The temperature of the cylinder"
+      },
+      "correct_answer": "B",
+      "explanation": "N2O is stored as a liquid with vapour above it, at about 745 psi (about 51 bar) at 20 degrees C. The pressure stays constant until all liquid has vaporised, so the gauge does not reflect the contents until the cylinder is nearly empty. Weighing (compared with the tare weight on the cylinder) is the reliable method."
+    },
+    {
+      "id": "U03Q3",
+      "unit_number": 3,
+      "unit_name": "Gas Supply",
+      "question": "The standard colour of a nitrous oxide (N2O) cylinder is:",
+      "options": {
+        "A": "Black",
+        "B": "Grey",
+        "C": "Blue",
+        "D": "Brown"
+      },
+      "correct_answer": "C",
+      "explanation": "N2O cylinders are blue in the international (ISO), UK, US and Indian conventions. Grey is used for carbon dioxide. Oxygen colour varies by country (white in ISO, black with white shoulders in the older UK/Indian scheme, green in the USA), so always read the label and check the pin index."
+    },
+    {
+      "id": "U03Q4",
+      "unit_number": 3,
+      "unit_name": "Gas Supply",
+      "question": "The normal working pressure of a hospital central pipeline gas supply reaching the anaesthesia machine is about:",
+      "options": {
+        "A": "50-55 psi (about 4 bar)",
+        "B": "10-15 psi",
+        "C": "100-120 psi",
+        "D": "200-250 psi"
+      },
+      "correct_answer": "A",
+      "explanation": "Pipeline gases (O2, N2O, medical air) are supplied at about 4 bar (50-55 psi). The pressure regulators on the machine reduce cylinder pressure (about 2,000 psi for O2) to a similar working level, which is why the pipeline is used in preference when both are connected. Connection is protected by Diameter Index Safety System (DISS) or Schrader probes, which are gas-specific."
+    },
+    {
+      "id": "U03Q5",
+      "unit_number": 3,
+      "unit_name": "Gas Supply",
+      "question": "A full size 'E' oxygen cylinder contains approximately how much oxygen?",
+      "options": {
+        "A": "340 litres",
+        "B": "680 litres",
+        "C": "1,360 litres",
+        "D": "3,400 litres"
+      },
+      "correct_answer": "B",
+      "explanation": "A full E cylinder (the size mounted on most anaesthesia machines) holds about 680 litres of oxygen at 2,000 psi. A size D cylinder holds about 340 litres. At 10 L/min, a full E cylinder lasts roughly an hour, so the pipeline supply should be checked and a spare cylinder kept available."
+    },
+    {
+      "id": "U04Q1",
+      "unit_number": 4,
+      "unit_name": "Basics of Respiratory Physiology",
+      "question": "The normal tidal volume of a healthy 70 kg adult at rest is approximately:",
+      "options": {
+        "A": "100-200 mL",
+        "B": "250 mL",
+        "C": "500 mL (6-8 mL/kg)",
+        "D": "1,000 mL"
+      },
+      "correct_answer": "C",
+      "explanation": "Normal resting tidal volume is about 6-8 mL/kg of ideal body weight, about 500 mL in an adult. This is also the target for lung-protective ventilation during anaesthesia (6-8 mL/kg)."
+    },
+    {
+      "id": "U04Q2",
+      "unit_number": 4,
+      "unit_name": "Basics of Respiratory Physiology",
+      "question": "A patient has a tidal volume of 500 mL and a respiratory rate of 14 breaths/min. The minute ventilation is:",
+      "options": {
+        "A": "3,000 mL/min",
+        "B": "4,000 mL/min",
+        "C": "6,000 mL/min",
+        "D": "7,000 mL/min"
+      },
+      "correct_answer": "D",
+      "explanation": "Minute ventilation = tidal volume x respiratory rate = 500 x 14 = 7,000 mL/min (7 L/min). Normal adult minute ventilation is about 5-8 L/min."
+    },
+    {
+      "id": "U04Q3",
+      "unit_number": 4,
+      "unit_name": "Basics of Respiratory Physiology",
+      "question": "Functional residual capacity (FRC) is the sum of:",
+      "options": {
+        "A": "Expiratory reserve volume + residual volume",
+        "B": "Tidal volume + expiratory reserve volume",
+        "C": "Inspiratory reserve volume + tidal volume",
+        "D": "Inspiratory reserve volume + tidal volume + expiratory reserve volume + residual volume"
+      },
+      "correct_answer": "A",
+      "explanation": "FRC = ERV + RV, the volume left in the lungs at the end of a normal expiration (about 2.5-3 L, about 30 mL/kg). It serves as the oxygen reservoir during apnoea and falls with supine position, general anaesthesia, obesity and pregnancy, so desaturation occurs faster. Option D is total lung capacity; option C is inspiratory capacity."
+    },
+    {
+      "id": "U04Q4",
+      "unit_number": 4,
+      "unit_name": "Basics of Respiratory Physiology",
+      "question": "The anatomical dead space in a healthy adult is approximately:",
+      "options": {
+        "A": "50 mL",
+        "B": "150 mL (about 2 mL/kg)",
+        "C": "500 mL",
+        "D": "1,000 mL"
+      },
+      "correct_answer": "B",
+      "explanation": "Anatomical dead space (conducting airways where no gas exchange occurs) is about 2 mL/kg, roughly 150 mL in adults. It is reduced by intubation or tracheostomy and increased by equipment such as a heat-moisture exchanger or long connectors."
+    },
+    {
+      "id": "U04Q5",
+      "unit_number": 4,
+      "unit_name": "Basics of Respiratory Physiology",
+      "question": "In a healthy person, the most important stimulus for regulating ventilation is:",
+      "options": {
+        "A": "A fall in PaO2 to 80 mmHg",
+        "B": "A fall in body temperature",
+        "C": "A rise in PaCO2",
+        "D": "A fall in haemoglobin concentration"
+      },
+      "correct_answer": "C",
+      "explanation": "Rising PaCO2 (sensed as an H+ change in CSF by the central chemoreceptors in the medulla) is the main drive to breathe. Peripheral chemoreceptors respond to hypoxia mainly when PaO2 falls below about 60 mmHg. Anaemia does not stimulate ventilation because chemoreceptors sense PaO2, not oxygen content."
+    },
+    {
+      "id": "U05Q1",
+      "unit_number": 5,
+      "unit_name": "Basics of Cardiovascular Physiology",
+      "question": "A patient has a heart rate of 80 beats/min and a stroke volume of 70 mL. The cardiac output is:",
+      "options": {
+        "A": "4.2 L/min",
+        "B": "5.6 L/min",
+        "C": "6.4 L/min",
+        "D": "8.0 L/min"
+      },
+      "correct_answer": "B",
+      "explanation": "Cardiac output = heart rate x stroke volume = 80 x 70 = 5,600 mL/min = 5.6 L/min. Normal adult cardiac output is about 4-8 L/min."
+    },
+    {
+      "id": "U05Q2",
+      "unit_number": 5,
+      "unit_name": "Basics of Cardiovascular Physiology",
+      "question": "A patient's blood pressure is 120/80 mmHg. The mean arterial pressure (MAP) is approximately:",
+      "options": {
+        "A": "80 mmHg",
+        "B": "87 mmHg",
+        "C": "93 mmHg",
+        "D": "100 mmHg"
+      },
+      "correct_answer": "C",
+      "explanation": "MAP = diastolic + one-third of pulse pressure = 80 + (40/3) = about 93 mmHg. Because diastole lasts longer than systole at normal heart rates, MAP is closer to the diastolic value than to a simple average (100). A MAP of at least 65 mmHg is generally required to perfuse vital organs."
+    },
+    {
+      "id": "U05Q3",
+      "unit_number": 5,
+      "unit_name": "Basics of Cardiovascular Physiology",
+      "question": "Which of the following is NOT one of the three principal determinants of stroke volume?",
+      "options": {
+        "A": "Preload",
+        "B": "Afterload",
+        "C": "Myocardial contractility",
+        "D": "Heart rate"
+      },
+      "correct_answer": "D",
+      "explanation": "Stroke volume depends on preload (end-diastolic volume), afterload (resistance the ventricle ejects against) and contractility. Heart rate is the other determinant of cardiac output (CO = HR x SV), not of stroke volume itself."
+    },
+    {
+      "id": "U05Q4",
+      "unit_number": 5,
+      "unit_name": "Basics of Cardiovascular Physiology",
+      "question": "Left ventricular coronary blood flow occurs predominantly during:",
+      "options": {
+        "A": "Diastole",
+        "B": "Systole",
+        "C": "Isovolumetric contraction",
+        "D": "Ejection phase"
+      },
+      "correct_answer": "A",
+      "explanation": "During systole, intramural pressure of the contracting left ventricle compresses the coronary vessels, so most left coronary flow occurs in diastole. Coronary perfusion pressure = aortic diastolic pressure - LV end-diastolic pressure. This is why tachycardia (shortened diastole) and low diastolic pressure worsen myocardial ischaemia."
+    },
+    {
+      "id": "U05Q5",
+      "unit_number": 5,
+      "unit_name": "Basics of Cardiovascular Physiology",
+      "question": "The normal pacemaker of the heart is the:",
+      "options": {
+        "A": "Atrioventricular (AV) node",
+        "B": "Sinoatrial (SA) node",
+        "C": "Bundle of His",
+        "D": "Purkinje fibres"
+      },
+      "correct_answer": "B",
+      "explanation": "The SA node has the fastest intrinsic rate (about 60-100/min) and therefore sets the heart rate. The AV node (about 40-60/min) and ventricular Purkinje fibres (about 20-40/min) take over only if higher pacemakers fail."
+    },
+    {
+      "id": "U06Q1",
+      "unit_number": 6,
+      "unit_name": "Preanesthetic Assessment",
+      "question": "As per current fasting guidelines, the minimum fasting period for clear liquids before elective surgery in adults is:",
+      "options": {
+        "A": "2 hours",
+        "B": "4 hours",
+        "C": "6 hours",
+        "D": "8 hours"
+      },
+      "correct_answer": "A",
+      "explanation": "ASA fasting guidelines: clear liquids 2 h; breast milk 4 h; infant formula, non-human milk and a light meal 6 h; a fatty or fried meal 8 h or more. Emergency patients are treated as having a full stomach regardless of fasting time."
+    },
+    {
+      "id": "U06Q2",
+      "unit_number": 6,
+      "unit_name": "Preanesthetic Assessment",
+      "question": "A patient with severe systemic disease that is a constant threat to life belongs to which ASA physical status class?",
+      "options": {
+        "A": "ASA I",
+        "B": "ASA II",
+        "C": "ASA III",
+        "D": "ASA IV"
+      },
+      "correct_answer": "D",
+      "explanation": "ASA I: healthy; II: mild systemic disease; III: severe systemic disease; IV: severe systemic disease that is a constant threat to life; V: moribund patient not expected to survive without surgery; VI: brain-dead organ donor. The suffix 'E' is added for emergency surgery."
+    },
+    {
+      "id": "U06Q3",
+      "unit_number": 6,
+      "unit_name": "Preanesthetic Assessment",
+      "question": "In Mallampati class III, which structures are visible when the patient opens the mouth and protrudes the tongue?",
+      "options": {
+        "A": "Soft palate, fauces, uvula and pillars",
+        "B": "Soft palate, fauces and uvula",
+        "C": "Soft palate and base of the uvula",
+        "D": "Hard palate only"
+      },
+      "correct_answer": "C",
+      "explanation": "Class I: soft palate, fauces, uvula and pillars; Class II: soft palate, fauces and uvula; Class III: soft palate and base of the uvula; Class IV: hard palate only. Classes III and IV predict a potentially difficult laryngoscopy."
+    },
+    {
+      "id": "U06Q4",
+      "unit_number": 6,
+      "unit_name": "Preanesthetic Assessment",
+      "question": "Which antisialagogue used in premedication does NOT cross the blood-brain barrier and therefore has minimal central effects?",
+      "options": {
+        "A": "Atropine",
+        "B": "Glycopyrrolate",
+        "C": "Hyoscine (scopolamine)",
+        "D": "Diazepam"
+      },
+      "correct_answer": "B",
+      "explanation": "Glycopyrrolate is a quaternary ammonium compound that does not cross the blood-brain barrier, so it causes less confusion and tachycardia than atropine. Atropine and hyoscine are tertiary amines and cross into the CNS (hyoscine also causes sedation and amnesia). Diazepam is a benzodiazepine, not an antisialagogue."
+    },
+    {
+      "id": "U06Q5",
+      "unit_number": 6,
+      "unit_name": "Preanesthetic Assessment",
+      "question": "For elective surgery, warfarin should ideally be stopped how many days before the procedure?",
+      "options": {
+        "A": "1 day",
+        "B": "2 days",
+        "C": "5 days",
+        "D": "10 days"
+      },
+      "correct_answer": "C",
+      "explanation": "Warfarin is usually stopped about 5 days before surgery so that INR normalises (target below about 1.5 for most procedures), with bridging heparin if thrombotic risk is high. Stopping only 1-2 days earlier leaves a persistent effect; 10 days is unnecessarily long. In urgent cases vitamin K or prothrombin complex may be used."
+    },
+    {
+      "id": "U07Q1",
+      "unit_number": 7,
+      "unit_name": "Intravenous Fluids",
+      "question": "The sodium concentration of 0.9% sodium chloride (normal saline) is approximately:",
+      "options": {
+        "A": "77 mmol/L",
+        "B": "154 mmol/L",
+        "C": "130 mmol/L",
+        "D": "140 mmol/L"
+      },
+      "correct_answer": "B",
+      "explanation": "0.9% NaCl contains 154 mmol/L sodium and 154 mmol/L chloride (osmolarity about 308 mOsm/L). Half-normal saline has about 77 mmol/L; Ringer's lactate has about 130 mmol/L sodium; plasma sodium is about 140 mmol/L."
+    },
+    {
+      "id": "U07Q2",
+      "unit_number": 7,
+      "unit_name": "Intravenous Fluids",
+      "question": "Hyperchloraemic metabolic acidosis is most associated with large-volume infusion of:",
+      "options": {
+        "A": "0.9% sodium chloride",
+        "B": "Ringer's lactate",
+        "C": "Plasma-Lyte",
+        "D": "5% dextrose"
+      },
+      "correct_answer": "A",
+      "explanation": "Normal saline has a chloride content (154 mmol/L) much higher than plasma (about 100 mmol/L), so large volumes cause a fall in bicarbonate and a hyperchloraemic acidosis. Balanced solutions such as Ringer's lactate and Plasma-Lyte have a more physiological chloride content. 5% dextrose contains no chloride."
+    },
+    {
+      "id": "U07Q3",
+      "unit_number": 7,
+      "unit_name": "Intravenous Fluids",
+      "question": "Using the 4-2-1 rule, the hourly maintenance fluid requirement of a 20 kg child is:",
+      "options": {
+        "A": "40 mL/h",
+        "B": "50 mL/h",
+        "C": "60 mL/h",
+        "D": "70 mL/h"
+      },
+      "correct_answer": "C",
+      "explanation": "4-2-1 rule: 4 mL/kg/h for the first 10 kg (40 mL) + 2 mL/kg/h for the next 10 kg (20 mL) + 1 mL/kg/h for each kg beyond 20 kg. For 20 kg: 40 + 20 = 60 mL/h."
+    },
+    {
+      "id": "U07Q4",
+      "unit_number": 7,
+      "unit_name": "Intravenous Fluids",
+      "question": "Which of the following is a colloid solution?",
+      "options": {
+        "A": "Ringer's lactate",
+        "B": "Normal saline",
+        "C": "Gelatin (e.g., Haemaccel, Gelofusine)",
+        "D": "5% dextrose"
+      },
+      "correct_answer": "C",
+      "explanation": "Colloids contain large molecules that stay longer in the intravascular space: gelatins, dextrans, hydroxyethyl starch and albumin. Ringer's lactate, normal saline and dextrose are crystalloids. Colloids carry risks such as anaphylactoid reactions (gelatins) and renal injury (starches), so crystalloids are generally first choice."
+    },
+    {
+      "id": "U07Q5",
+      "unit_number": 7,
+      "unit_name": "Intravenous Fluids",
+      "question": "Which of the following fluids is LEAST effective for expanding the intravascular volume?",
+      "options": {
+        "A": "Normal saline",
+        "B": "Ringer's lactate",
+        "C": "Gelatin",
+        "D": "5% dextrose in water"
+      },
+      "correct_answer": "D",
+      "explanation": "Once the dextrose is metabolised, 5% dextrose behaves like free water and distributes across all body compartments, so only about 1/12 (about 8%) stays intravascular. It is therefore unsuitable for resuscitation and can cause hyponatraemia. Crystalloids such as saline and Ringer's lactate stay about 25% intravascular; colloids stay longer."
+    },
+    {
+      "id": "U08Q1",
+      "unit_number": 8,
+      "unit_name": "General Anesthesia and Anesthetic Agents",
+      "question": "Which intravenous induction agent is generally preferred for day-care surgery because of rapid, clear-headed recovery and antiemetic properties?",
+      "options": {
+        "A": "Propofol",
+        "B": "Thiopentone",
+        "C": "Ketamine",
+        "D": "Etomidate"
+      },
+      "correct_answer": "A",
+      "explanation": "Propofol (induction dose about 1.5-2.5 mg/kg) is redistributed and metabolised rapidly, giving smooth recovery with low incidence of nausea and vomiting. Its side effects are pain on injection, hypotension and apnoea. Thiopentone has a hangover effect, ketamine causes emergence phenomena, and etomidate causes adrenal suppression and myoclonus."
+    },
+    {
+      "id": "U08Q2",
+      "unit_number": 8,
+      "unit_name": "General Anesthesia and Anesthetic Agents",
+      "question": "Which induction agent is preferred in a hypovolaemic patient and also in an asthmatic patient because it maintains blood pressure and causes bronchodilation?",
+      "options": {
+        "A": "Propofol",
+        "B": "Thiopentone",
+        "C": "Ketamine",
+        "D": "Midazolam"
+      },
+      "correct_answer": "C",
+      "explanation": "Ketamine (1-2 mg/kg IV) is an NMDA antagonist that produces dissociative anaesthesia, increases heart rate and blood pressure via sympathetic stimulation, and relaxes bronchial smooth muscle. Propofol and thiopentone cause dose-dependent hypotension, and thiopentone can precipitate bronchospasm in asthmatics. Ketamine should be avoided in raised intracranial pressure, severe hypertension and psychosis."
+    },
+    {
+      "id": "U08Q3",
+      "unit_number": 8,
+      "unit_name": "General Anesthesia and Anesthetic Agents",
+      "question": "Which neuromuscular blocking drug has the fastest onset and shortest duration of action?",
+      "options": {
+        "A": "Vecuronium",
+        "B": "Atracurium",
+        "C": "Pancuronium",
+        "D": "Suxamethonium (succinylcholine)"
+      },
+      "correct_answer": "D",
+      "explanation": "Suxamethonium (1-1.5 mg/kg IV) is a depolarising relaxant with onset in 30-60 seconds and duration of about 5-10 minutes, so it is used for rapid-sequence induction. Its side effects include fasciculations, myalgia, hyperkalaemia, bradycardia, raised intraocular pressure and malignant hyperthermia. The other three are non-depolarising agents with slower onset and longer duration."
+    },
+    {
+      "id": "U08Q4",
+      "unit_number": 8,
+      "unit_name": "General Anesthesia and Anesthetic Agents",
+      "question": "When neostigmine is used to reverse a non-depolarising muscle relaxant, it is combined with which drug to block its muscarinic side effects?",
+      "options": {
+        "A": "Adrenaline",
+        "B": "Glycopyrrolate (or atropine)",
+        "C": "Suxamethonium",
+        "D": "Naloxone"
+      },
+      "correct_answer": "B",
+      "explanation": "Neostigmine inhibits acetylcholinesterase, so acetylcholine accumulates at both nicotinic and muscarinic receptors, causing bradycardia, salivation and bronchospasm. It is given with glycopyrrolate (about 0.01 mg/kg) or atropine (about 0.02 mg/kg); neostigmine dose is about 0.05 mg/kg. Sugammadex is an alternative that reverses rocuronium and vecuronium by encapsulation."
+    },
+    {
+      "id": "U08Q5",
+      "unit_number": 8,
+      "unit_name": "General Anesthesia and Anesthetic Agents",
+      "question": "Which volatile anaesthetic agent has the lowest blood:gas partition coefficient, giving the fastest induction and emergence?",
+      "options": {
+        "A": "Halothane",
+        "B": "Isoflurane",
+        "C": "Sevoflurane",
+        "D": "Desflurane"
+      },
+      "correct_answer": "D",
+      "explanation": "Blood:gas partition coefficients: desflurane about 0.42, sevoflurane about 0.65, isoflurane about 1.4, halothane about 2.4 (nitrous oxide is 0.47). The lower the coefficient, the faster the alveolar concentration equilibrates with inspired concentration. Sevoflurane is preferred for inhalational induction because desflurane is pungent and irritates the airway."
+    },
+    {
+      "id": "U09Q1",
+      "unit_number": 9,
+      "unit_name": "Regional Anesthesia",
+      "question": "Which of the following is an ester-type local anaesthetic?",
+      "options": {
+        "A": "Lignocaine",
+        "B": "Bupivacaine",
+        "C": "Procaine",
+        "D": "Ropivacaine"
+      },
+      "correct_answer": "C",
+      "explanation": "Ester-type local anaesthetics include procaine, chloroprocaine, tetracaine and cocaine; they are hydrolysed by plasma cholinesterase and more often cause allergic reactions (PABA metabolite). Lignocaine, bupivacaine, ropivacaine, levobupivacaine and prilocaine are amides, metabolised in the liver."
+    },
+    {
+      "id": "U09Q2",
+      "unit_number": 9,
+      "unit_name": "Regional Anesthesia",
+      "question": "The maximum safe dose of plain lignocaine (without adrenaline) is commonly taken as:",
+      "options": {
+        "A": "1.5 mg/kg",
+        "B": "4.5 mg/kg",
+        "C": "10 mg/kg",
+        "D": "15 mg/kg"
+      },
+      "correct_answer": "B",
+      "explanation": "Plain lignocaine: about 4.5 mg/kg (some references use 3 mg/kg); with adrenaline about 7 mg/kg. Bupivacaine is about 2 mg/kg (2.5 mg/kg with adrenaline). Always calculate the maximum dose in mg (1% = 10 mg/mL) before large-volume blocks or infiltration."
+    },
+    {
+      "id": "U09Q3",
+      "unit_number": 9,
+      "unit_name": "Regional Anesthesia",
+      "question": "The specific treatment adjunct for severe local anaesthetic systemic toxicity (LAST), particularly bupivacaine cardiotoxicity, is:",
+      "options": {
+        "A": "20% lipid emulsion (intralipid)",
+        "B": "Naloxone",
+        "C": "Flumazenil",
+        "D": "Neostigmine"
+      },
+      "correct_answer": "A",
+      "explanation": "In LAST, stop injecting, call for help, secure airway and give 100% oxygen, control seizures (benzodiazepine) and give 20% lipid emulsion (1.5 mL/kg bolus followed by infusion) along with CPR if in arrest. Naloxone reverses opioids and flumazenil reverses benzodiazepines; neither treats LAST."
+    },
+    {
+      "id": "U09Q4",
+      "unit_number": 9,
+      "unit_name": "Regional Anesthesia",
+      "question": "Local anaesthetic solutions containing adrenaline should NOT be used for:",
+      "options": {
+        "A": "Infiltration of a scalp wound",
+        "B": "Epidural anaesthesia",
+        "C": "Infiltration along a laparotomy incision",
+        "D": "Digital (ring) block of a finger"
+      },
+      "correct_answer": "D",
+      "explanation": "Adrenaline causes vasoconstriction and can lead to ischaemic necrosis in areas supplied by end arteries: fingers, toes, penis, ear and tip of the nose. In other sites, adrenaline (commonly 1:200,000 = 5 microgram/mL) prolongs the block, reduces systemic absorption and bleeding."
+    },
+    {
+      "id": "U09Q5",
+      "unit_number": 9,
+      "unit_name": "Regional Anesthesia",
+      "question": "Local anaesthetics produce nerve block by blocking:",
+      "options": {
+        "A": "Potassium channels",
+        "B": "Calcium channels",
+        "C": "Voltage-gated sodium channels",
+        "D": "Chloride channels"
+      },
+      "correct_answer": "C",
+      "explanation": "Local anaesthetics enter the nerve in the unionised form and block the intracellular side of voltage-gated sodium channels, preventing depolarisation and conduction. Small, myelinated fibres are blocked first, in the order: preganglionic sympathetic (B), pain and temperature (C and A-delta), touch and pressure, and finally motor (A-alpha)."
+    },
+    {
+      "id": "U10Q1",
+      "unit_number": 10,
+      "unit_name": "Spinal Anesthesia",
+      "question": "The line joining the highest points of the iliac crests (Tuffier's line) usually crosses the vertebral column at the level of:",
+      "options": {
+        "A": "L4 spinous process or L4-L5 interspace",
+        "B": "L2 vertebra",
+        "C": "S1 vertebra",
+        "D": "T12 vertebra"
+      },
+      "correct_answer": "A",
+      "explanation": "Tuffier's (intercristal) line crosses at about L4 or the L4-L5 interspace. Spinal needles are inserted at L3-L4 or L4-L5 (below the end of the spinal cord, which ends at L1 in adults and L3 in neonates) to avoid cord injury."
+    },
+    {
+      "id": "U10Q2",
+      "unit_number": 10,
+      "unit_name": "Spinal Anesthesia",
+      "question": "Which of the following is an absolute contraindication to spinal anaesthesia?",
+      "options": {
+        "A": "Diabetes mellitus",
+        "B": "Infection at the site of needle insertion",
+        "C": "Chronic low backache",
+        "D": "Age above 60 years"
+      },
+      "correct_answer": "B",
+      "explanation": "Absolute contraindications include patient refusal, local infection at the puncture site or systemic sepsis, coagulopathy, raised intracranial pressure, severe uncorrected hypovolaemia and severe fixed-output cardiac lesions such as severe aortic stenosis. Diabetes, old age and chronic backache are not contraindications."
+    },
+    {
+      "id": "U10Q3",
+      "unit_number": 10,
+      "unit_name": "Spinal Anesthesia",
+      "question": "Which needle type is associated with the lowest incidence of post-dural puncture headache (PDPH)?",
+      "options": {
+        "A": "22G Quincke (cutting) needle",
+        "B": "20G Quincke needle",
+        "C": "18G Tuohy needle",
+        "D": "25G Whitacre (pencil-point) needle"
+      },
+      "correct_answer": "D",
+      "explanation": "Pencil-point needles (Whitacre, Sprotte, Pencan) part rather than cut the dural fibres, and finer gauges (25-27G) further reduce CSF leak. PDPH is a fronto-occipital headache worse on sitting or standing. Treatment: bed rest, fluids, analgesics, caffeine, and epidural blood patch (about 15-20 mL autologous blood) for severe or persistent cases. The Tuohy needle is an epidural needle, and a large accidental puncture with it gives a very high PDPH rate."
+    },
+    {
+      "id": "U10Q4",
+      "unit_number": 10,
+      "unit_name": "Spinal Anesthesia",
+      "question": "The most common complication of spinal anaesthesia is hypotension. Which drug is commonly used as a first-line vasopressor to treat it?",
+      "options": {
+        "A": "Atropine",
+        "B": "Hydrocortisone",
+        "C": "Ephedrine",
+        "D": "Salbutamol"
+      },
+      "correct_answer": "C",
+      "explanation": "Spinal-induced hypotension results from sympathetic blockade (venous pooling and reduced systemic vascular resistance). Management: position (left uterine displacement in pregnancy), IV fluid co-load and vasopressor such as ephedrine 5-10 mg (or phenylephrine, or mephentermine). Atropine is used if there is significant bradycardia; hydrocortisone and salbutamol have no role."
+    },
+    {
+      "id": "U10Q5",
+      "unit_number": 10,
+      "unit_name": "Spinal Anesthesia",
+      "question": "'Heavy' (hyperbaric) bupivacaine for spinal anaesthesia is prepared by adding:",
+      "options": {
+        "A": "5% dextrose",
+        "B": "8% dextrose",
+        "C": "10% saline",
+        "D": "Adrenaline"
+      },
+      "correct_answer": "B",
+      "explanation": "Hyperbaric 0.5% bupivacaine contains 8% dextrose (specific gravity greater than CSF), so the drug spreads with gravity according to the patient's position. A typical adult dose is about 10-15 mg (2-3 mL). Isobaric solutions do not contain dextrose and are less affected by position."
+    },
+    {
+      "id": "U11Q1",
+      "unit_number": 11,
+      "unit_name": "Patient Monitoring Equipments",
+      "question": "A pulse oximeter uses light of which two wavelengths?",
+      "options": {
+        "A": "540 nm and 940 nm",
+        "B": "560 nm and 850 nm",
+        "C": "660 nm (red) and 940 nm (infrared)",
+        "D": "400 nm and 700 nm"
+      },
+      "correct_answer": "C",
+      "explanation": "Oxyhaemoglobin absorbs more infrared (940 nm) light and deoxyhaemoglobin absorbs more red light (660 nm). The ratio of pulsatile absorbance at these wavelengths is converted into SpO2. Normal SpO2 is 95-100%."
+    },
+    {
+      "id": "U11Q2",
+      "unit_number": 11,
+      "unit_name": "Patient Monitoring Equipments",
+      "question": "Which of the following causes a falsely normal or high SpO2 reading?",
+      "options": {
+        "A": "Methylene blue injection",
+        "B": "Blue nail polish",
+        "C": "Hypothermia with peripheral vasoconstriction",
+        "D": "Carboxyhaemoglobin (carbon monoxide poisoning)"
+      },
+      "correct_answer": "D",
+      "explanation": "Carboxyhaemoglobin absorbs red light similarly to oxyhaemoglobin, so the pulse oximeter overestimates true oxygen saturation. Methylene blue and blue nail polish cause falsely low readings; vasoconstriction gives poor signal or low readings. Methaemoglobin causes readings to drift towards about 85%."
+    },
+    {
+      "id": "U11Q3",
+      "unit_number": 11,
+      "unit_name": "Patient Monitoring Equipments",
+      "question": "Using a blood pressure cuff that is too small for the patient's arm results in:",
+      "options": {
+        "A": "Falsely high blood pressure reading",
+        "B": "Falsely low blood pressure reading",
+        "C": "No effect on the reading",
+        "D": "Only the diastolic reading is affected"
+      },
+      "correct_answer": "A",
+      "explanation": "A narrow cuff transmits pressure poorly to the artery, so a higher cuff pressure is needed to occlude it and the reading is falsely high. A cuff that is too large gives a falsely low reading. The ideal bladder width is about 40% of the arm circumference (and about two-thirds of the upper-arm length)."
+    },
+    {
+      "id": "U11Q4",
+      "unit_number": 11,
+      "unit_name": "Patient Monitoring Equipments",
+      "question": "Which ECG lead is most useful for routine intraoperative detection of arrhythmias because it shows the P wave best?",
+      "options": {
+        "A": "Lead I",
+        "B": "Lead II",
+        "C": "Lead aVR",
+        "D": "Lead aVL"
+      },
+      "correct_answer": "B",
+      "explanation": "Lead II is parallel to the atrial depolarisation vector, so P waves are tallest and rhythm analysis is easiest; it also detects inferior wall ischaemia. Lead V5 is the most sensitive single lead for anterior and lateral wall ischaemia, and a combination of II and V5 detects about 80% of ischaemic events."
+    },
+    {
+      "id": "U11Q5",
+      "unit_number": 11,
+      "unit_name": "Patient Monitoring Equipments",
+      "question": "The earliest ECG change of hyperkalaemia is:",
+      "options": {
+        "A": "Tall, peaked (tented) T waves",
+        "B": "ST-segment elevation",
+        "C": "Prominent U waves",
+        "D": "Prolonged QT interval"
+      },
+      "correct_answer": "A",
+      "explanation": "Hyperkalaemia first produces tall, narrow, peaked T waves, followed by PR prolongation, loss of P waves, QRS widening, a sine-wave pattern and finally asystole or VF. Prominent U waves and QT prolongation are typical of hypokalaemia. Treatment starts with IV calcium to stabilise the myocardium."
+    },
+    {
+      "id": "U12Q1",
+      "unit_number": 12,
+      "unit_name": "Basics of Emergency Drugs",
+      "question": "Which of the following is NOT an effect of atropine?",
+      "options": {
+        "A": "Tachycardia",
+        "B": "Mydriasis",
+        "C": "Dry mouth",
+        "D": "Miosis"
+      },
+      "correct_answer": "D",
+      "explanation": "Atropine is a competitive muscarinic antagonist. It causes tachycardia, mydriasis (with cycloplegia), reduced secretions, urinary retention and bronchodilation. Miosis is the opposite effect and is seen with cholinergic excess (e.g., organophosphate poisoning, which is treated with atropine). The paediatric dose for bradycardia is 0.02 mg/kg; adults are usually given 0.5-1 mg IV."
+    },
+    {
+      "id": "U12Q2",
+      "unit_number": 12,
+      "unit_name": "Basics of Emergency Drugs",
+      "question": "The standard adult dose of adrenaline in cardiac arrest is:",
+      "options": {
+        "A": "0.1 mg IV every 3-5 minutes",
+        "B": "0.5 mg IV every 3-5 minutes",
+        "C": "1 mg IV every 3-5 minutes",
+        "D": "5 mg IV every 3-5 minutes"
+      },
+      "correct_answer": "C",
+      "explanation": "Adrenaline 1 mg (10 mL of 1:10,000) IV or IO is given every 3-5 minutes during cardiac arrest, as soon as possible for non-shockable rhythms and after the second shock for shockable rhythms. The alpha-adrenergic effect raises coronary and cerebral perfusion pressure during CPR."
+    },
+    {
+      "id": "U12Q3",
+      "unit_number": 12,
+      "unit_name": "Basics of Emergency Drugs",
+      "question": "Mephentermine (Termin) is mainly used in anaesthesia to treat:",
+      "options": {
+        "A": "Status epilepticus",
+        "B": "Hypoglycaemia",
+        "C": "Ventricular fibrillation",
+        "D": "Hypotension (e.g., after spinal anaesthesia or induction)"
+      },
+      "correct_answer": "D",
+      "explanation": "Mephentermine is a mixed-acting sympathomimetic (releases noradrenaline indirectly with some direct alpha and beta action). It increases cardiac output and blood pressure and is given in small IV boluses (e.g., 3-6 mg), titrated to effect, to treat hypotension. Seizures, hypoglycaemia and VF require anticonvulsants, dextrose and defibrillation respectively."
+    },
+    {
+      "id": "U12Q4",
+      "unit_number": 12,
+      "unit_name": "Basics of Emergency Drugs",
+      "question": "Xylocard (preservative-free lignocaine 2%) is used as an antiarrhythmic in:",
+      "options": {
+        "A": "Sinus bradycardia",
+        "B": "Ventricular arrhythmias",
+        "C": "Complete heart block",
+        "D": "Atrial flutter"
+      },
+      "correct_answer": "B",
+      "explanation": "Lignocaine is a Class Ib antiarrhythmic effective against ventricular arrhythmias such as ventricular tachycardia and ventricular ectopics (usual bolus 1-1.5 mg/kg IV). It is an alternative to amiodarone in shock-refractory VF/pulseless VT. It is not effective for supraventricular arrhythmias and can worsen heart block."
+    },
+    {
+      "id": "U12Q5",
+      "unit_number": 12,
+      "unit_name": "Basics of Emergency Drugs",
+      "question": "How much adrenaline is present in 1 mL of a 1:10,000 solution?",
+      "options": {
+        "A": "0.1 mg",
+        "B": "1 mg",
+        "C": "0.01 mg",
+        "D": "10 mg"
+      },
+      "correct_answer": "A",
+      "explanation": "A 1:10,000 solution means 1 g in 10,000 mL = 0.1 mg/mL. A 1:1,000 solution contains 1 mg/mL. Use 1:10,000 (IV) for cardiac arrest and 1:1,000 (IM) for anaphylaxis; confusing the two concentrations is a dangerous drug error."
+    },
+    {
+      "id": "U13Q1",
+      "unit_number": 13,
+      "unit_name": "Basic and Advanced Airway Management",
+      "question": "'See-saw' (paradoxical thoraco-abdominal) breathing with absence of air movement suggests:",
+      "options": {
+        "A": "Partial upper airway obstruction",
+        "B": "Complete upper airway obstruction",
+        "C": "Asthma",
+        "D": "Pulmonary oedema"
+      },
+      "correct_answer": "B",
+      "explanation": "In complete obstruction the chest is drawn in as the abdomen rises (see-saw movement), with no breath sounds or air felt at the mouth. Partial obstruction produces noisy breathing: snoring (tongue), gurgling (fluid) and stridor (laryngeal). Management: head tilt-chin lift/jaw thrust, suction, oropharyngeal airway, then advanced airway."
+    },
+    {
+      "id": "U13Q2",
+      "unit_number": 13,
+      "unit_name": "Basic and Advanced Airway Management",
+      "question": "The usual size (internal diameter) of an oral endotracheal tube for an adult female is:",
+      "options": {
+        "A": "5.0-5.5 mm",
+        "B": "6.0 mm",
+        "C": "7.0-7.5 mm",
+        "D": "9.5-10 mm"
+      },
+      "correct_answer": "C",
+      "explanation": "Adult females usually need a 7.0-7.5 mm ID tube and males 8.0-8.5 mm (cuffed). The tube is fixed at about 21 cm at the teeth for women and 23 cm for men. The tube should be replaced with a size smaller if it does not pass or if airway oedema is suspected."
+    },
+    {
+      "id": "U13Q3",
+      "unit_number": 13,
+      "unit_name": "Basic and Advanced Airway Management",
+      "question": "What size of cuffed endotracheal tube (internal diameter) is suitable for an 8-year-old child using the formula (age/4) + 3.5?",
+      "options": {
+        "A": "5.5 mm",
+        "B": "4.5 mm",
+        "C": "6.5 mm",
+        "D": "7.5 mm"
+      },
+      "correct_answer": "A",
+      "explanation": "Cuffed tube: (age/4) + 3.5 = 8/4 + 3.5 = 5.5 mm. For an uncuffed tube the formula is (age/4) + 4 = 6.0 mm. Always have tubes half a size larger and smaller ready."
+    },
+    {
+      "id": "U13Q4",
+      "unit_number": 13,
+      "unit_name": "Basic and Advanced Airway Management",
+      "question": "During laryngoscopy with a curved (Macintosh) blade, the tip of the blade is placed in the:",
+      "options": {
+        "A": "Laryngeal surface of the epiglottis",
+        "B": "Posterior pharyngeal wall",
+        "C": "Piriform fossa",
+        "D": "Vallecula"
+      },
+      "correct_answer": "D",
+      "explanation": "The Macintosh blade tip is inserted into the vallecula (between the base of the tongue and the epiglottis) and lifted along the handle axis to indirectly lift the epiglottis. A straight (Miller) blade is used to lift the epiglottis directly and is preferred in infants."
+    },
+    {
+      "id": "U13Q5",
+      "unit_number": 13,
+      "unit_name": "Basic and Advanced Airway Management",
+      "question": "The most reliable method to confirm correct endotracheal tube placement is:",
+      "options": {
+        "A": "Chest wall movement",
+        "B": "Misting of the tube",
+        "C": "Continuous capnography (end-tidal CO2 waveform)",
+        "D": "Bilateral air entry on auscultation"
+      },
+      "correct_answer": "C",
+      "explanation": "A sustained ETCO2 waveform over several breaths is the gold standard for confirming tracheal placement (it may be absent in cardiac arrest or severe low flow). Chest rise, misting and auscultation can be misleading. Oesophageal intubation is suggested by absent waveform, gastric air sounds and no chest movement."
+    },
+    {
+      "id": "U14Q1",
+      "unit_number": 14,
+      "unit_name": "Cardiopulmonary Resuscitation",
+      "question": "The recommended rate of chest compressions in adult CPR is:",
+      "options": {
+        "A": "60-80 per minute",
+        "B": "100-120 per minute",
+        "C": "120-140 per minute",
+        "D": "140-160 per minute"
+      },
+      "correct_answer": "B",
+      "explanation": "Chest compressions should be delivered at 100-120 per minute, at least 5 cm (not more than 6 cm) deep in adults, allowing full chest recoil and minimising interruptions. Too slow reduces cardiac output, and too fast reduces the filling time and depth."
+    },
+    {
+      "id": "U14Q2",
+      "unit_number": 14,
+      "unit_name": "Cardiopulmonary Resuscitation",
+      "question": "The compression-to-ventilation ratio in adult CPR (without an advanced airway) is:",
+      "options": {
+        "A": "15:2",
+        "B": "5:1",
+        "C": "30:2",
+        "D": "30:1"
+      },
+      "correct_answer": "C",
+      "explanation": "Adult CPR uses 30 compressions to 2 breaths for both single and two rescuers. Once an advanced airway is placed, compressions continue at 100-120/min with one breath every 6 seconds (10/min) without pausing. 15:2 is used by two rescuers in children and infants."
+    },
+    {
+      "id": "U14Q3",
+      "unit_number": 14,
+      "unit_name": "Cardiopulmonary Resuscitation",
+      "question": "Which of the following cardiac arrest rhythms is shockable?",
+      "options": {
+        "A": "Asystole",
+        "B": "Pulseless electrical activity (PEA)",
+        "C": "Sinus bradycardia",
+        "D": "Ventricular fibrillation"
+      },
+      "correct_answer": "D",
+      "explanation": "The shockable rhythms are ventricular fibrillation and pulseless ventricular tachycardia (biphasic defibrillator 120-200 J, or 360 J monophasic). Asystole and PEA are non-shockable and treated with high-quality CPR, adrenaline and correction of reversible causes."
+    },
+    {
+      "id": "U14Q4",
+      "unit_number": 14,
+      "unit_name": "Cardiopulmonary Resuscitation",
+      "question": "Which of the following is NOT one of the reversible causes ('4 Hs and 4 Ts') of cardiac arrest?",
+      "options": {
+        "A": "Hypertension",
+        "B": "Hypovolaemia",
+        "C": "Tension pneumothorax",
+        "D": "Hypothermia"
+      },
+      "correct_answer": "A",
+      "explanation": "The 4 Hs are hypoxia, hypovolaemia, hydrogen ions (acidosis)/hypo- or hyperkalaemia, and hypothermia. The 4 Ts are tension pneumothorax, tamponade, toxins and thrombosis (coronary or pulmonary). Hypertension is not a cause of arrest in this list."
+    },
+    {
+      "id": "U14Q5",
+      "unit_number": 14,
+      "unit_name": "Cardiopulmonary Resuscitation",
+      "question": "In the classical ABCDE primary survey of ATLS (trauma), the first priority is:",
+      "options": {
+        "A": "Breathing",
+        "B": "Airway with cervical spine protection",
+        "C": "Circulation",
+        "D": "Disability"
+      },
+      "correct_answer": "B",
+      "explanation": "The primary survey follows A (airway with cervical spine protection), B (breathing and ventilation), C (circulation with haemorrhage control), D (disability, neurological status) and E (exposure and environmental control). Note that current ATLS teaching adds immediate control of life-threatening external haemorrhage first (xABCDE)."
+    },
+    {
+      "id": "U15Q1",
+      "unit_number": 15,
+      "unit_name": "Basics of Drug Reaction and Anaphylaxis",
+      "question": "Anaphylaxis is a hypersensitivity reaction of which type?",
+      "options": {
+        "A": "Type I (IgE-mediated)",
+        "B": "Type II (cytotoxic)",
+        "C": "Type III (immune complex)",
+        "D": "Type IV (delayed, T-cell mediated)"
+      },
+      "correct_answer": "A",
+      "explanation": "Anaphylaxis is a Type I immediate hypersensitivity reaction: prior sensitisation produces IgE bound to mast cells, and re-exposure triggers massive release of histamine, tryptase and leukotrienes. Type II includes mismatched transfusion reactions, Type III serum sickness and Type IV contact dermatitis."
+    },
+    {
+      "id": "U15Q2",
+      "unit_number": 15,
+      "unit_name": "Basics of Drug Reaction and Anaphylaxis",
+      "question": "The first-line drug and route for treating anaphylaxis is:",
+      "options": {
+        "A": "IV hydrocortisone",
+        "B": "Oral antihistamine",
+        "C": "Nebulised salbutamol",
+        "D": "Intramuscular adrenaline"
+      },
+      "correct_answer": "D",
+      "explanation": "Give adrenaline 0.5 mg (0.5 mL of 1:1,000) IM into the anterolateral mid-thigh in adults (0.01 mg/kg in children, maximum 0.5 mg), repeated after 5 minutes if needed. Also stop the trigger, give oxygen, IV fluids and, as second-line agents, antihistamine and corticosteroid, which do not relieve life-threatening features quickly."
+    },
+    {
+      "id": "U15Q3",
+      "unit_number": 15,
+      "unit_name": "Basics of Drug Reaction and Anaphylaxis",
+      "question": "An anaphylactoid reaction differs from anaphylaxis in that it:",
+      "options": {
+        "A": "Is always milder",
+        "B": "Does not require prior sensitisation and is not IgE-mediated",
+        "C": "Is treated with different drugs",
+        "D": "Occurs only with food allergens"
+      },
+      "correct_answer": "B",
+      "explanation": "Anaphylactoid (non-immune) reactions result from direct mast-cell degranulation (e.g., by vancomycin, morphine, some muscle relaxants) without IgE or prior exposure. They can be just as severe and clinically indistinguishable, and the treatment is the same."
+    },
+    {
+      "id": "U15Q4",
+      "unit_number": 15,
+      "unit_name": "Basics of Drug Reaction and Anaphylaxis",
+      "question": "Which of the following is NOT a typical feature of anaphylaxis?",
+      "options": {
+        "A": "Angioedema",
+        "B": "Bronchospasm",
+        "C": "Marked hypertension",
+        "D": "Hypotension"
+      },
+      "correct_answer": "C",
+      "explanation": "Anaphylaxis presents with cutaneous signs (urticaria, flushing, angioedema), respiratory signs (stridor, wheeze, bronchospasm) and cardiovascular collapse (vasodilation, hypotension, tachycardia). Under anaesthesia, hypotension, high airway pressures or bronchospasm may be the only signs. Hypertension is not a feature."
+    },
+    {
+      "id": "U15Q5",
+      "unit_number": 15,
+      "unit_name": "Basics of Drug Reaction and Anaphylaxis",
+      "question": "Which laboratory test helps confirm the diagnosis of anaphylaxis after the event?",
+      "options": {
+        "A": "Serum mast cell tryptase",
+        "B": "C-reactive protein",
+        "C": "Serum amylase",
+        "D": "Erythrocyte sedimentation rate"
+      },
+      "correct_answer": "A",
+      "explanation": "Mast cell tryptase peaks about 1-2 hours after onset of the reaction, so a sample should be drawn within this time (and compared with a baseline sample taken after 24 hours). Patients should then be referred for allergy testing to identify the culprit drug."
+    },
+    {
+      "id": "U16Q1",
+      "unit_number": 16,
+      "unit_name": "Blood and Blood Product Transfusion",
+      "question": "The universal donor for red blood cell transfusion is:",
+      "options": {
+        "A": "AB positive",
+        "B": "A negative",
+        "C": "O negative",
+        "D": "B positive"
+      },
+      "correct_answer": "C",
+      "explanation": "Group O red cells have neither A nor B antigens, and Rh-negative cells lack the D antigen, so O negative packed cells can be given in emergencies when the recipient's group is unknown. AB positive is the universal recipient for red cells (and AB plasma is the universal donor plasma)."
+    },
+    {
+      "id": "U16Q2",
+      "unit_number": 16,
+      "unit_name": "Blood and Blood Product Transfusion",
+      "question": "The major cross-match consists of mixing:",
+      "options": {
+        "A": "Donor serum with recipient red cells",
+        "B": "Donor red cells with donor serum",
+        "C": "Recipient red cells with recipient serum",
+        "D": "Donor red cells with recipient serum"
+      },
+      "correct_answer": "D",
+      "explanation": "The major cross-match tests donor red cells against recipient serum to detect recipient antibodies that could destroy the donated cells. The minor cross-match (donor serum with recipient cells) is now rarely performed. Cross-matching does not replace bedside identity checks."
+    },
+    {
+      "id": "U16Q3",
+      "unit_number": 16,
+      "unit_name": "Blood and Blood Product Transfusion",
+      "question": "A patient develops fever, chills, back pain and hypotension shortly after starting a transfusion. The first step is to:",
+      "options": {
+        "A": "Stop the transfusion immediately and keep the IV line open with saline",
+        "B": "Slow the transfusion rate",
+        "C": "Give paracetamol and continue transfusion",
+        "D": "Wait and observe for 30 minutes"
+      },
+      "correct_answer": "A",
+      "explanation": "This picture suggests an acute haemolytic transfusion reaction (usually ABO incompatibility from clerical error). Stop the transfusion, maintain the IV line with normal saline, recheck patient and bag identity, notify the blood bank, send samples and give supportive care (fluids, oxygen, monitoring of urine output and coagulation)."
+    },
+    {
+      "id": "U16Q4",
+      "unit_number": 16,
+      "unit_name": "Blood and Blood Product Transfusion",
+      "question": "Rapid massive transfusion of stored blood containing citrate can cause:",
+      "options": {
+        "A": "Hypercalcaemia",
+        "B": "Hypocalcaemia",
+        "C": "Hypernatraemia",
+        "D": "Hypoglycaemia"
+      },
+      "correct_answer": "B",
+      "explanation": "Citrate is an anticoagulant that chelates ionised calcium, and rapid transfusion (especially with poor liver function or hypothermia) causes hypocalcaemia with hypotension and prolonged QT, treated with IV calcium. Massive transfusion can also cause hyperkalaemia, hypothermia, acidosis and dilutional coagulopathy."
+    },
+    {
+      "id": "U16Q5",
+      "unit_number": 16,
+      "unit_name": "Blood and Blood Product Transfusion",
+      "question": "During blood bag checking before transfusion, which finding is a reason to REJECT the unit?",
+      "options": {
+        "A": "Bag stored at 2-6 degrees C with intact seal",
+        "B": "Label details match the patient and cross-match report",
+        "C": "Pinkish or discoloured plasma, clots, or leakage",
+        "D": "Expiry date not yet reached"
+      },
+      "correct_answer": "C",
+      "explanation": "Reject bags with haemolysis (pink or red plasma), clots, leaks, abnormal (purple/black) colour suggesting bacterial contamination, or expired dates. Red cells are stored at 2-6 degrees C, should be started within 30 minutes of leaving the fridge and completed within 4 hours. Always check two-person patient identification at the bedside."
+    },
+    {
+      "id": "U17Q1",
+      "unit_number": 17,
+      "unit_name": "Shock",
+      "question": "Shock is best defined as:",
+      "options": {
+        "A": "A rise in blood pressure above normal",
+        "B": "Circulatory failure resulting in inadequate tissue perfusion and oxygen delivery relative to demand",
+        "C": "A haemoglobin concentration below 7 g/dL",
+        "D": "Failure of renal function"
+      },
+      "correct_answer": "B",
+      "explanation": "Shock is a life-threatening state of inadequate tissue perfusion leading to cellular hypoxia and organ dysfunction. Hypotension is common but not essential for the definition (compensated shock may present with normal BP). Early signs include tachycardia, cold peripheries, prolonged capillary refill, oliguria and altered sensorium."
+    },
+    {
+      "id": "U17Q2",
+      "unit_number": 17,
+      "unit_name": "Shock",
+      "question": "Anaphylactic shock is classified as which type of shock?",
+      "options": {
+        "A": "Hypovolaemic",
+        "B": "Cardiogenic",
+        "C": "Obstructive",
+        "D": "Distributive"
+      },
+      "correct_answer": "D",
+      "explanation": "The four categories are hypovolaemic (haemorrhage, dehydration), cardiogenic (MI, arrhythmia), obstructive (tension pneumothorax, tamponade, massive PE) and distributive (septic, anaphylactic, neurogenic) shock. Distributive shock is caused by widespread vasodilation with low systemic vascular resistance."
+    },
+    {
+      "id": "U17Q3",
+      "unit_number": 17,
+      "unit_name": "Shock",
+      "question": "According to the ATLS classification of haemorrhage, hypotension typically first appears in which class?",
+      "options": {
+        "A": "Class I (less than 15% blood loss)",
+        "B": "Class II (15-30%)",
+        "C": "Class III (30-40%)",
+        "D": "Class IV (more than 40%)"
+      },
+      "correct_answer": "C",
+      "explanation": "Class I and II haemorrhage are compensated (tachycardia and reduced pulse pressure develop in class II). Class III (30-40% loss, about 1,500-2,000 mL) leads to hypotension, marked tachycardia and confusion; class IV (more than 40%) is immediately life-threatening. Blood volume is about 70 mL/kg in adults."
+    },
+    {
+      "id": "U17Q4",
+      "unit_number": 17,
+      "unit_name": "Shock",
+      "question": "A patient with cervical spinal cord injury has hypotension, bradycardia and warm, dry skin. The most likely diagnosis is:",
+      "options": {
+        "A": "Neurogenic shock",
+        "B": "Hypovolaemic shock",
+        "C": "Cardiogenic shock",
+        "D": "Obstructive shock"
+      },
+      "correct_answer": "A",
+      "explanation": "High spinal cord injury interrupts sympathetic outflow, causing vasodilation with unopposed vagal tone: hypotension with bradycardia and warm peripheries. Hypovolaemic shock produces tachycardia and cold skin. Treatment: fluids (cautiously), vasopressors such as norepinephrine, and atropine for symptomatic bradycardia, while excluding concurrent bleeding."
+    },
+    {
+      "id": "U17Q5",
+      "unit_number": 17,
+      "unit_name": "Shock",
+      "question": "The first-line vasopressor in septic shock is:",
+      "options": {
+        "A": "Dopamine",
+        "B": "Norepinephrine (noradrenaline)",
+        "C": "Phenylephrine",
+        "D": "Isoprenaline"
+      },
+      "correct_answer": "B",
+      "explanation": "Surviving Sepsis guidelines recommend early antibiotics (within 1 hour), a crystalloid bolus of about 30 mL/kg within the first 3 hours, and norepinephrine as the first-choice vasopressor to maintain MAP of at least 65 mmHg. Dopamine carries a higher risk of arrhythmias, and isoprenaline is not used for septic shock."
+    }
+  ]
+}
+</script>
+<script>
+(function () {
+  'use strict';
+
+  var DATA = JSON.parse(document.getElementById('qdata').textContent);
+  var QS = DATA.questions;
+  var UNITS = [];
+  QS.forEach(function (q) {
+    var u = UNITS.filter(function (x) { return x.n === q.unit_number; })[0];
+    if (!u) { u = { n: q.unit_number, name: q.unit_name, qs: [] }; UNITS.push(u); }
+    u.qs.push(q);
+  });
+  UNITS.sort(function (a, b) { return a.n - b.n; });
+
+  var MOCK_N = Math.min(50, QS.length);
+  var MARK = 2;
+  var NEG = 0.4;
+  var KEY = 'anes-mcq-v1';
+  var LETTERS = ['A', 'B', 'C', 'D'];
+
+  /* ---------- saved progress (this browser only) ---------- */
+  var store = { results: {}, mocks: [] };
+  function loadStore() {
+    try {
+      var raw = localStorage.getItem(KEY);
+      if (raw) {
+        var p = JSON.parse(raw);
+        if (p && typeof p === 'object') {
+          store.results = p.results && typeof p.results === 'object' ? p.results : {};
+          store.mocks = Array.isArray(p.mocks) ? p.mocks : [];
+        }
+      }
+    } catch (e) { /* storage unavailable: run without saving */ }
+  }
+  function saveStore() {
+    try { localStorage.setItem(KEY, JSON.stringify(store)); } catch (e) { /* ignore */ }
+  }
+  loadStore();
+
+  /* ---------- helpers ---------- */
+  function append(el, c) {
+    if (c == null || c === false) return;
+    if (Array.isArray(c)) { c.forEach(function (x) { append(el, x); }); }
+    else if (c.nodeType) { el.appendChild(c); }
+    else { el.appendChild(document.createTextNode(String(c))); }
+  }
+  function h(tag, props) {
+    var el = document.createElement(tag);
+    props = props || {};
+    Object.keys(props).forEach(function (k) {
+      var v = props[k];
+      if (v == null || v === false) return;
+      if (k === 'class') el.className = v;
+      else if (k.slice(0, 2) === 'on') el.addEventListener(k.slice(2), v);
+      else el.setAttribute(k, v === true ? '' : v);
+    });
+    for (var i = 2; i < arguments.length; i++) append(el, arguments[i]);
+    return el;
+  }
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  function fmtTime(s) { var m = Math.floor(s / 60), r = s % 60; return m + ':' + (r < 10 ? '0' : '') + r; }
+  function fmtScore(n) { return String(Math.round(n * 10) / 10); }
+
+  function flow(p0, size, now, max, label) {
+    var ball = h('span', { class: 'ball' });
+    var t = h('div', {
+      class: 'tube ' + size, role: 'progressbar',
+      'aria-valuemin': '0', 'aria-valuemax': String(max), 'aria-valuenow': String(now), 'aria-label': label
+    }, ball);
+    t.style.setProperty('--p', p0);
+    return t;
+  }
+  function setFlow(t, p) { t.style.setProperty('--p', p); }
+  function later(fn) { requestAnimationFrame(function () { requestAnimationFrame(fn); }); }
+
+  /* ---------- state ---------- */
+  var S = { view: 'home' };
+  var app = document.getElementById('app');
+  var timer = null;
+  function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+  function elapsed() { return Math.floor((Date.now() - S.start) / 1000); }
+  function startTimer() {
+    stopTimer();
+    timer = setInterval(function () {
+      var c = document.getElementById('clock');
+      if (c) c.textContent = fmtTime(elapsed());
+    }, 1000);
+  }
+
+  function render(keep) {
+    var y = window.scrollY;
+    var node = S.view === 'home' ? homeView() : S.view === 'quiz' ? quizView() : resultView();
+    app.replaceChildren(node);
+    window.scrollTo(0, keep ? y : 0);
+  }
+
+  function goHome() { stopTimer(); S = { view: 'home' }; render(); }
+
+  function startQuiz(opts) {
+    S = {
+      view: 'quiz', mode: opts.mode, qs: opts.qs, title: opts.title,
+      idx: 0, answers: {}, start: Date.now(), lastP: 0
+    };
+    render();
+    if (S.mode === 'mock') startTimer(); else stopTimer();
+  }
+
+  /* ---------- modal ---------- */
+  function openModal(build) {
+    var prev = document.activeElement;
+    var scrim = h('div', { class: 'scrim' });
+    var dlg = h('div', { class: 'dialog', role: 'dialog', 'aria-modal': 'true', 'aria-labelledby': 'dlg-title', tabindex: '-1' });
+    function close() {
+      document.removeEventListener('keydown', onKey, true);
+      scrim.remove();
+      if (prev && prev.focus && document.contains(prev)) prev.focus();
+    }
+    function onKey(e) {
+      if (e.key === 'Escape') { e.stopPropagation(); close(); return; }
+      if (e.key === 'Tab') {
+        var f = dlg.querySelectorAll('button:not([disabled])');
+        if (!f.length) return;
+        var first = f[0], last = f[f.length - 1];
+        if (e.shiftKey && (document.activeElement === first || document.activeElement === dlg)) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+    scrim.addEventListener('click', function (e) { if (e.target === scrim) close(); });
+    append(dlg, build(close));
+    scrim.appendChild(dlg);
+    document.body.appendChild(scrim);
+    document.addEventListener('keydown', onKey, true);
+    dlg.focus();
+  }
+  function confirmModal(title, text, yesLabel, onYes, noLabel) {
+    openModal(function (close) {
+      return [
+        h('h2', { id: 'dlg-title' }, title),
+        h('p', { class: 'muted' }, text),
+        h('div', { class: 'dlg-actions' },
+          h('button', { class: 'btn', onclick: close }, noLabel || 'Cancel'),
+          h('button', { class: 'btn primary', onclick: function () { close(); onYes(); } }, yesLabel))
+      ];
+    });
+  }
+
+  /* ---------- home ---------- */
+  function homeView() {
+    stopTimer();
+    var R = store.results;
+    var mastered = QS.filter(function (q) { return R[q.id] === 1; }).length;
+    var missed = QS.filter(function (q) { return R[q.id] === 0; });
+    var tube = flow(0, 'big', mastered, QS.length, 'Questions answered correctly');
+    later(function () { setFlow(tube, QS.length ? mastered / QS.length : 0); });
+
+    var actions = h('div', { class: 'actions' },
+      h('button', { class: 'btn primary', onclick: function () {
+        startQuiz({ mode: 'mock', qs: shuffle(QS.slice()).slice(0, MOCK_N), title: 'Mock test' });
+      } }, 'Start mock test (' + MOCK_N + ' questions)'),
+      h('button', { class: 'btn', onclick: function () {
+        startQuiz({ mode: 'practice', qs: shuffle(QS.slice()), title: 'All questions' });
+      } }, 'Practice all ' + QS.length),
+      missed.length ? h('button', { class: 'btn', onclick: function () {
+        startQuiz({ mode: 'practice', qs: shuffle(missed.slice()), title: 'Missed questions' });
+      } }, 'Redo ' + missed.length + ' missed') : null
+    );
+
+    var unitRows = UNITS.map(function (u) {
+      var tried = u.qs.filter(function (q) { return q.id in R; }).length;
+      var good = u.qs.filter(function (q) { return R[q.id] === 1; }).length;
+      var pips = h('span', { class: 'pips', 'aria-hidden': 'true' }, u.qs.map(function (q) {
+        return h('span', { class: 'pip' + (R[q.id] === 1 ? ' g' : R[q.id] === 0 ? ' b' : '') });
+      }));
+      return h('button', { class: 'unit', onclick: function () {
+        startQuiz({ mode: 'practice', qs: u.qs.slice(), title: u.name });
+      } },
+        h('span', { class: 'un' }, String(u.n)),
+        h('span', { class: 'uname' }, u.name),
+        h('span', { class: 'ustat' }, pips, tried ? good + ' of ' + u.qs.length + ' correct' : u.qs.length + ' questions')
+      );
+    });
+
+    var mocks = store.mocks.slice(0, 5);
+    var hasData = Object.keys(R).length || store.mocks.length;
+
+    return h('main', { class: 'wrap' },
+      h('section', { class: 'hero' },
+        h('h1', null, 'Anesthesia Assistant'),
+        h('p', { class: 'ne', lang: 'ne' }, 'एनेस्थेसिया सहायक, सहायक पाँचौ तह'),
+        h('p', { class: 'lede' }, 'Practice for the Gandaki Pradesh Lok Sewa Aayog written exam. The real paper has 50 MCQs worth 2 marks each, and every wrong answer costs 0.4 marks.'),
+        h('div', { class: 'gauge' }, tube,
+          h('p', { class: 'gauge-note' }, mastered + ' of ' + QS.length + ' questions answered correctly on your last try')),
+        actions
+      ),
+      h('section', null,
+        h('h2', { class: 'sec' }, 'Practice by unit'),
+        h('p', { class: 'sub' }, 'Each unit follows the official syllabus. You see the answer and explanation right after every question.'),
+        h('div', { class: 'units' }, unitRows)
+      ),
+      mocks.length ? h('section', null,
+        h('h2', { class: 'sec' }, 'Recent mock tests'),
+        h('ul', { class: 'mocks' }, mocks.map(function (m) {
+          return h('li', null,
+            h('span', null, new Date(m.t).toLocaleDateString(undefined, { day: 'numeric', month: 'short' })),
+            h('span', null, fmtScore(m.score) + ' of ' + (m.n * MARK) + ' marks'),
+            h('span', null, fmtTime(m.secs)));
+        }))
+      ) : null,
+      h('p', { class: 'foot' },
+        'Unofficial practice material. Check drug doses and values against your textbook and the official syllabus. Your progress is saved only in this browser.',
+        hasData ? h('span', null, ' ', h('button', { class: 'linkbtn', onclick: function () {
+          confirmModal('Clear saved progress?', 'This removes your question history and mock test scores from this browser.', 'Clear progress', function () {
+            store = { results: {}, mocks: [] }; saveStore(); render(true);
+          });
+        } }, 'Clear saved progress')) : null
+      )
+    );
+  }
+
+  /* ---------- quiz ---------- */
+  function choose(letter) {
+    var q = S.qs[S.idx];
+    if (S.mode === 'practice') {
+      if (S.answers[q.id]) return;
+      S.answers[q.id] = letter;
+      store.results[q.id] = letter === q.correct_answer ? 1 : 0;
+      saveStore();
+      render(true);
+      var w = document.querySelector('.why');
+      if (w) { w.focus({ preventScroll: true }); w.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }
+    } else {
+      if (S.answers[q.id] === letter) delete S.answers[q.id]; else S.answers[q.id] = letter;
+      render(true);
+      var b = document.querySelector('.opt[data-l="' + letter + '"]');
+      if (b) b.focus({ preventScroll: true });
+    }
+  }
+  function next() {
+    var q = S.qs[S.idx];
+    if (S.mode === 'practice' && !S.answers[q.id]) return;
+    if (S.idx < S.qs.length - 1) { S.idx++; render(); }
+    else if (S.mode === 'practice') { finishPractice(); }
+    else { openList(); }
+  }
+  function prev() { if (S.mode === 'mock' && S.idx > 0) { S.idx--; render(); } }
+  function exitQuiz() {
+    if (S.mode === 'mock' && Object.keys(S.answers).length) {
+      confirmModal('Leave this test?', 'Your answers will not be scored or saved.', 'Leave test', goHome, 'Keep going');
+    } else { goHome(); }
+  }
+  function openList() {
+    openModal(function (close) {
+      var n = S.qs.length;
+      var answered = Object.keys(S.answers).length;
+      var cells = S.qs.map(function (qq, i) {
+        var done = !!S.answers[qq.id];
+        return h('button', {
+          class: 'cell' + (done ? ' done' : '') + (i === S.idx ? ' cur' : ''),
+          'aria-label': 'Question ' + (i + 1) + (done ? ', answered' : ', not answered') + (i === S.idx ? ', current' : ''),
+          onclick: function () { close(); S.idx = i; render(); }
+        }, String(i + 1));
+      });
+      var left = n - answered;
+      return [
+        h('h2', { id: 'dlg-title' }, 'Question list'),
+        h('p', { class: 'muted' }, answered + ' of ' + n + ' answered. Filled numbers are answered.' +
+          (left ? ' Unanswered questions score 0 and lose no marks.' : '')),
+        h('div', { class: 'grid' }, cells),
+        h('div', { class: 'dlg-actions' },
+          h('button', { class: 'btn', onclick: close }, 'Back to test'),
+          h('button', { class: 'btn primary', onclick: function () { close(); finishMock(); } }, 'Submit test'))
+      ];
+    });
+  }
+
+  function quizView() {
+    var q = S.qs[S.idx], n = S.qs.length, mock = S.mode === 'mock';
+    var ans = S.answers[q.id];
+    var lock = !mock && !!ans;
+    var p = (S.idx + 1) / n;
+    var tube = flow(S.lastP, 'sm', S.idx + 1, n, 'Question progress');
+    var startP = S.lastP;
+    S.lastP = p;
+    if (startP !== p) later(function () { setFlow(tube, p); }); else setFlow(tube, p);
+
+    var opts = LETTERS.map(function (L) {
+      var cls = 'opt', tag = null;
+      if (lock) {
+        if (L === q.correct_answer) { cls += ' right'; tag = L === ans ? 'Your answer, correct' : 'Correct answer'; }
+        else if (L === ans) { cls += ' wrong'; tag = 'Your answer'; }
+      }
+      var props = { class: cls, type: 'button', 'data-l': L, onclick: function () { choose(L); } };
+      if (mock) props['aria-pressed'] = ans === L ? 'true' : 'false';
+      if (lock) props['aria-disabled'] = 'true';
+      return h('button', props,
+        h('span', { class: 'ltr' }, L),
+        h('span', null, q.options[L], tag ? h('span', { class: 'tag' }, tag) : null));
+    });
+
+    var why = null;
+    if (lock) {
+      var ok = ans === q.correct_answer;
+      why = h('div', { class: 'why ' + (ok ? 'ok' : 'no'), tabindex: '-1', role: 'status' },
+        h('p', { class: 'verdict' }, ok ? 'Correct.' : 'Not quite. The correct answer is ' + q.correct_answer + '.'),
+        h('p', null, q.explanation));
+    }
+
+    var navBtns;
+    if (mock) {
+      var answered = Object.keys(S.answers).length;
+      navBtns = [
+        h('button', { class: 'btn', onclick: prev, disabled: S.idx === 0 }, 'Previous'),
+        h('button', { class: 'ghost mid', onclick: openList }, 'Question list (' + answered + '/' + n + ')'),
+        h('button', { class: 'btn primary', onclick: next }, S.idx === n - 1 ? 'Review and submit' : 'Next')
+      ];
+    } else {
+      navBtns = [
+        h('button', { class: 'btn primary end', onclick: next, disabled: !ans },
+          S.idx === n - 1 ? 'See results' : 'Next question')
+      ];
+    }
+
+    return h('div', { class: 'shell' },
+      h('header', { class: 'bar' }, h('div', { class: 'wrap row' },
+        h('button', { class: 'ghost', onclick: exitQuiz }, 'Exit'),
+        tube,
+        h('span', { class: 'count' }, (S.idx + 1) + ' / ' + n),
+        mock ? h('span', { class: 'clock', id: 'clock', 'aria-label': 'Time elapsed' }, fmtTime(elapsed())) : null
+      )),
+      h('main', { class: 'wrap' },
+        h('p', { class: 'qmeta' }, 'Unit ' + q.unit_number + ': ' + q.unit_name),
+        h('h1', { class: 'qtext' }, q.question),
+        h('div', { class: 'opts' }, opts),
+        mock ? h('p', { class: 'hint' }, 'Tap your answer again to clear it. Answers are scored when you submit.') : null,
+        why
+      ),
+      h('nav', { class: 'nav', 'aria-label': 'Question navigation' }, h('div', { class: 'wrap' }, navBtns))
+    );
+  }
+
+  /* ---------- results ---------- */
+  function summarize() {
+    var c = 0, w = 0, s = 0, per = {};
+    S.qs.forEach(function (q) {
+      var a = S.answers[q.id];
+      var u = per[q.unit_number] || (per[q.unit_number] = { name: q.unit_name, c: 0, w: 0, s: 0 });
+      if (!a) { s++; u.s++; }
+      else if (a === q.correct_answer) { c++; u.c++; }
+      else { w++; u.w++; }
+    });
+    return { c: c, w: w, s: s, per: per };
+  }
+  function finishMock() {
+    stopTimer();
+    var r = summarize();
+    S.secs = elapsed();
+    S.qs.forEach(function (q) {
+      var a = S.answers[q.id];
+      if (a) store.results[q.id] = a === q.correct_answer ? 1 : 0;
+    });
+    store.mocks.unshift({
+      t: Date.now(), score: Math.round((r.c * MARK - r.w * NEG) * 10) / 10,
+      c: r.c, w: r.w, s: r.s, n: S.qs.length, secs: S.secs
+    });
+    store.mocks = store.mocks.slice(0, 10);
+    saveStore();
+    S.view = 'result'; S.filter = 'all'; render();
+  }
+  function finishPractice() {
+    S.secs = elapsed();
+    S.view = 'result'; S.filter = 'all'; render();
+  }
+
+  function resultView() {
+    var r = summarize(), n = S.qs.length, mock = S.mode === 'mock';
+    var missed = S.qs.filter(function (q) { return S.answers[q.id] && S.answers[q.id] !== q.correct_answer; });
+
+    var head;
+    if (mock) {
+      var score = r.c * MARK - r.w * NEG;
+      head = [
+        h('h1', null, 'Mock test result'),
+        h('p', null, h('span', { class: 'score' }, fmtScore(score)), h('span', { class: 'of' }, 'out of ' + (n * MARK) + ' marks')),
+        h('p', { class: 'math' },
+          r.c + ' correct earn ' + (r.c * MARK) + ' marks. ' + r.w + ' wrong cost ' + fmtScore(r.w * NEG) + ' marks. ' +
+          r.s + ' skipped score 0. Time taken: ' + fmtTime(S.secs) + '.')
+      ];
+    } else {
+      head = [
+        h('h1', null, S.title),
+        h('p', null, h('span', { class: 'score' }, String(r.c)), h('span', { class: 'of' }, 'of ' + n + ' correct')),
+        h('p', { class: 'math' }, 'Practice mode has no negative marking. Review the explanations below, especially the ones you missed.')
+      ];
+    }
+
+    var split = h('div', { class: 'split', role: 'img', 'aria-label': r.c + ' correct, ' + r.w + ' wrong, ' + r.s + ' skipped' },
+      h('span', { class: 's-c', style: 'width:' + (r.c / n * 100) + '%' }),
+      h('span', { class: 's-w', style: 'width:' + (r.w / n * 100) + '%' }),
+      h('span', { class: 's-s', style: 'width:' + (r.s / n * 100) + '%' }));
+    var legend = h('div', { class: 'legend' },
+      h('span', { class: 'lc' }, r.c + ' correct'),
+      h('span', { class: 'lw' }, r.w + ' wrong'),
+      h('span', { class: 'ls' }, r.s + ' skipped'));
+
+    var unitKeys = Object.keys(r.per).map(Number).sort(function (a, b) { return a - b; });
+    var table = h('div', { class: 'tblbox' }, h('table', { class: 'tbl' },
+      h('thead', null, h('tr', null, h('th', null, 'Unit'), h('th', null, 'Correct'), h('th', null, 'Wrong'), h('th', null, 'Skipped'))),
+      h('tbody', null, unitKeys.map(function (k) {
+        var u = r.per[k];
+        return h('tr', null, h('td', null, k + '. ' + u.name), h('td', null, String(u.c)), h('td', null, String(u.w)), h('td', null, String(u.s)));
+      }))));
+
+    var list = h('div', { 'aria-live': 'polite' });
+    var tabsEl = h('div', { class: 'tabs' });
+    function drawReview() {
+      tabsEl.replaceChildren.apply(tabsEl, [['all', 'All ' + n], ['wrong', 'Wrong ' + r.w], ['skipped', 'Skipped ' + r.s]].map(function (t) {
+        return h('button', { class: 'tab', 'aria-pressed': S.filter === t[0] ? 'true' : 'false', onclick: function () { S.filter = t[0]; drawReview(); } }, t[1]);
+      }));
+      var items = [];
+      S.qs.forEach(function (q, i) {
+        var a = S.answers[q.id];
+        var st = !a ? 'skipped' : a === q.correct_answer ? 'correct' : 'wrong';
+        if (S.filter !== 'all' && S.filter !== st) return;
+        items.push(h('article', { class: 'rev ' + st },
+          h('p', { class: 'rev-h' }, 'Question ' + (i + 1) + ', unit ' + q.unit_number + ', ' + st),
+          h('h3', null, q.question),
+          h('p', { class: 'ans' }, a ? 'Your answer: ' + a + '. ' + q.options[a] : 'You skipped this question.'),
+          st !== 'correct' ? h('p', { class: 'ans key' }, 'Correct answer: ' + q.correct_answer + '. ' + q.options[q.correct_answer]) : null,
+          h('p', { class: 'expl' }, q.explanation)));
+      });
+      list.replaceChildren.apply(list, items.length ? items : [h('p', { class: 'empty' }, 'Nothing to show here.')]);
+    }
+    drawReview();
+
+    return h('main', { class: 'wrap res' },
+      head, split, legend,
+      h('h2', { class: 'sec' }, 'By unit'), table,
+      h('h2', { class: 'sec' }, 'Review with explanations'), tabsEl, list,
+      h('div', { class: 'end-actions' },
+        h('button', { class: 'btn primary', onclick: function () {
+          if (mock) startQuiz({ mode: 'mock', qs: shuffle(QS.slice()).slice(0, MOCK_N), title: 'Mock test' });
+          else startQuiz({ mode: 'practice', qs: shuffle(S.qs.slice()), title: S.title });
+        } }, mock ? 'Take another mock test' : 'Practice again'),
+        missed.length ? h('button', { class: 'btn', onclick: function () {
+          startQuiz({ mode: 'practice', qs: shuffle(missed.slice()), title: 'Missed questions' });
+        } }, 'Practice ' + missed.length + ' missed') : null,
+        h('button', { class: 'btn', onclick: goHome }, 'Back to home'))
+    );
+  }
+
+  /* ---------- keyboard shortcuts ---------- */
+  document.addEventListener('keydown', function (e) {
+    if (S.view !== 'quiz' || document.querySelector('.scrim') || e.ctrlKey || e.metaKey || e.altKey) return;
+    var map = { A: 'A', B: 'B', C: 'C', D: 'D', '1': 'A', '2': 'B', '3': 'C', '4': 'D' };
+    var k = String(e.key).toUpperCase();
+    if (map[k]) { choose(map[k]); }
+    else if (e.key === 'ArrowRight') { next(); }
+    else if (e.key === 'ArrowLeft') { prev(); }
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
